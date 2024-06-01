@@ -1,0 +1,87 @@
+﻿@model IEnumerable<SEE_TURTLES_WEB_APP_FINAL.Models.JoinProperty>
+
+@{
+    ViewBag.Title = "joinedVolunteer";
+}
+
+<h2>joinedVolunteer</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.VolunteerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.volCondition)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Motivation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expectation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyMobile)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmergencyRelation)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.VolunteerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.volCondition)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Motivation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Expectation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyMobile)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmergencyRelation)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

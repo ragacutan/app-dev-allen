@@ -1,0 +1,204 @@
+﻿@{
+    ViewBag.Title = "dashboard";
+    Layout = "~/Views/Shared/_adminDashboard.cshtml";
+}
+
+@if (Session["emailid"] != null)
+{
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <div class="row-merch">
+
+                <img src="~/ImgAdmin/curma-logo.png">
+
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a  onclick="location.href='@Url.Action("dashboard", "Admin")'">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a  onclick="location.href='@Url.Action("volunteerList", "Admin")'">
+                    <i class='bx bx-box'></i>
+                    <span class="links_name">Volunteers</span>
+                </a>
+            </li>
+            <li>
+                <a  onclick="location.href='@Url.Action("Nesting", "Admin")'">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Nesting</span>
+                </a>
+            </li>
+            <li>
+                <a onclick="location.href='@Url.Action("Hatchling", "Admin")'">
+                    <i class='bx bx-list-ul'></i>
+                    <span class="links_name">Hatchling</span>
+                </a>
+            </li>
+            <li>
+                <a  onclick="location.href='@Url.Action("AddEvent", "Admin")'">
+                    <i class='bx bx-message'></i>
+                    <span class="links_name">Activities</span>
+                </a>
+            </li>
+            <li>
+                <a href="bookings.php">
+                    <i class='bx bx-message'></i>
+                    <span class="links_name">Trainings</span>
+                </a>
+            </li>
+            <li>
+                <a href="bookings.php">
+                    <i class='bx bx-message'></i>
+                    <span class="links_name">Awareness</span>
+                </a>
+            </li>
+            <li>
+                <a href="bookings.php">
+                    <i class='bx bx-message'></i>
+                    <span class="links_name">News</span>
+                </a>
+            </li>
+            <li>
+                <a href="bookings.php">
+                    <i class='bx bx-message'></i>
+                    <span class="links_name">Merchandise</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a onclick="myFunction()">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="search-box">
+                <input type="text" placeholder="Search here...">
+                <i class='bx bx-search'></i>
+            </div>
+            <div class="profile-details">
+                <img src="~/ImgAdmin/admin_profile.png" alt="">
+                <span class="admin_name">@Html.ViewData["AdminName"]</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </nav>
+        <div class="home-content">
+            <div class="row-admin">
+                <div class="column-admin-1">
+                    <h1>Nesting</h1>
+                    <p>Hi, @Html.ViewData["AdminName"]! Welcome to CURMA Nesting!.</p>
+                </div>
+                <div class="column-admin-2">
+                    <div class="box-title">
+                        <p>.</p>
+                    </div>
+                </div>
+                <div class="column-admin-3">
+                    <div class="box-title">
+                        <p>.</p>
+                    </div>
+                </div>
+            </div>
+            <link rel='stylesheet' type='text/css' href='https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps.css'>
+            <script onload="mapContent();" src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.5.0/maps/maps-web.min.js"
+                    defer></script>
+
+            <style>
+                #map {
+                    height: 500px;
+                    width: 90%;
+                    margin-left: 70px;
+                    border-radius: 50px;
+                }
+                @@media only screen and (max-width: 767px) {
+          #map {
+            height: 300px;
+          }
+        }
+
+
+                #marker {
+                    background-image: url("img/map-pin.png");
+                    background-size: cover;
+                    width: 30px;
+                    height: 30px;
+                }
+            </style>
+
+            <div id='map'></div>
+            <script>
+                function mapContent() {
+                    var api_key = 'lJL8KdsVTi6imtKvVoo7z8eLJVizmCee';
+                    var latAndLong = { lat: 16.675809024488974, lng: 120.33568755780001 };
+                    var zoomLevel = 14;
+                    var yourAddress = 'CURMA';
+
+                    var map = tt.map({
+                        container: 'map',
+                        key: api_key,
+                        center: latAndLong,
+                        zoom: zoomLevel
+                    });
+
+                    var marker = new tt.Marker().setLngLat(latAndLong).addTo(map);
+
+                    // FOR CUSTOM MARKER
+                    //var customMarker = document.createElement('div');
+                    //customMarker.id = 'marker';
+                    //var marker = new tt.Marker({element: customMarker}).setLngLat(latAndLong).addTo(map);
+
+                    var popupOffsets = {
+                        top: [0, 0],
+                        bottom: [0, -70],
+                        'bottom-right': [0, -70],
+                        'bottom-left': [0, -70],
+                        left: [25, -35],
+                        right: [-25, -35]
+                    }
+
+                    var popup = new tt.Popup({ offset: popupOffsets }).setHTML(yourAddress);
+                    marker.setPopup(popup).togglePopup();
+
+                }
+
+            </script>
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Turtle Type</th>
+                    <th>Date</th>
+                    <th>Location</th>
+                    <th>Reported By:</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>1001</td>
+                    <td>Olive Ridley</td>
+                    <td>01/05/2023</td>
+                    <td>Ili Norte, San Juan</td>
+                    <td>Juan Daniel</td>
+                    <td><a href="#" class="btn-section-table">Respond</a> </td>
+                </tr>
+
+            </table>
+        </div>
+    </section>
+    <script>
+        function myFunction() {
+        if (confirm("Are You Sure You Want to Logout?")) {
+        var url = "@Url.Action("LoginPage", "Admin")";
+        window.location.href = url;
+            }
+        }
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+    </script>
+</body>
+}

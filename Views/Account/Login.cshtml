@@ -1,0 +1,48 @@
+﻿@model SEE_TURTLES_WEB_APP_FINAL.Models.VolunteerProperty
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Account.cshtml";
+}
+
+    <section class="login-body-container">
+        <div class="login-container">
+            <div class="side-login">
+                <img src="~/img/login_icon.png" alt="">
+            </div>
+            <form action="Verify" method="post" autocomplete="off" class="login-form">
+                <div class="login-form-logo">
+                    <img style="position:relative; left:220px;" onclick="location.href='@Url.Action("Index", "Home")'" src="~/img/home.png">
+                </div>
+                <h2>Welcome Back!</h2>
+                <h5>Login to continue</h5>
+                @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+                <input type="email" name="email" class="login-input-box" placeholder="Enter Email" required>
+                <input type="password" name="password" class="login-input-box" placeholder="Enter Password" required>
+                <input type="submit" name="submit" value="LOG IN" id="submit-login">
+                <p>Don't have an account? <a onclick="location.href='@Url.Action("Create", "Account")'"> Sign up here </a></p>
+                <p>Login with</p>
+                <section>
+                    <div class="social-wrapper">
+                        <ul>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <img src="~/img/google-logo.png" alt="Facebook Logo" class="social-media-icon">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <img src="~/img/fb.png" alt="Facebook Logo" class="social-media-icon">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" target="_blank">
+                                    <img src="~/img/twt.png" alt="Facebook Logo" class="social-media-icon">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </form>
+        </div>
+    </section>

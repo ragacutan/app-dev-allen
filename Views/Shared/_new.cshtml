@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SEE TURTLES</title>
+    <link rel="icon" href="~/icon/favicon.ico" />
+    @Styles.Render("~/Content/Training.css")
+</head>
+<body>
+    <main>
+        <header>
+            <div id="banner_training">
+                <div id="navbar">
+                    <img id="logo" src="~/img/see_logo.png">
+                    <nav>
+                        <ul>
+                            <li>@Html.ActionLink("PROGRAMS", "HomePage", "Account")</li>
+                            <li>@Html.ActionLink("TRAININGS", "Training", "Account")</li>
+                            <li>@Html.ActionLink("VOLUNTEERS", "Volunteers", "Home")</li>
+                            <li>@Html.ActionLink("AWARENESS", "Awareness", "Home")</li>
+                            <li>@Html.ActionLink("NEWS", "News", "Home")</li>
+                            <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
+
+                        </ul>
+                    </nav>
+                    <div id="navbar-icons">
+                        <img src="~/img/contact_icon.png">
+                        <img src="~/img/shop_icon.png">
+                        <img src="~/img/search_icon.png">
+                        <img src="~/img/profile.png" onclick="location.href='@Url.Action("profile", "Account")'">
+                    </div>
+                    <button class="btn-banner-upper-rigth" onclick="myFunction()">LOGOUT</button>
+                </div>
+                <div class="content-banner-training">
+                    <h1>TRAININGS AND<br>SEMINARS</h1>
+                    <p>
+                        One of the most significant benefits of training and seminars on turtle  <br>
+                        Conservation is that it helps to increase awareness and understanding of  <br>
+                        the importance of turtles in the ecosystem. Furthermore, training and  <br>
+                        seminars on turtle conservation are essential for equipping researchers  <br>
+                        and conservationists with the knowledge and tools they need to study <br>
+                        and protect turtle populations effectively.
+                    </p>
+                    <div class="btn-banner-group">
+                        <a href="" class="btn-banner-first">SEE ALL TRAININGS</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        @RenderBody()
+        <footer>
+            <section class="ft-main">
+                <div class="ft-main-item">
+                    <div><img src="~/ImgAdmin/footer_logo.png"></div>
+                    <p>
+                        We work to protect sea turtle populations and their<br>
+                        habitats from threats such as pollution, habitat destruction, <br>
+                        and climate change. We also raise public awareness about <br>
+                        the importance of sea turtles and their role in maintaining<br>
+                        healthy marine ecosystems.
+                    </p>
+                </div>
+                <div class="ft-main-item">
+                    <h2 class="ft-title">Office</h2>
+                    <p>
+                        374 St. Jude Subdivision, <br>
+                        Ili Norte,, 2514 San Juan, La Union<br>
+                        <br>
+                        Phone Number +639423664519
+                    </p>
+                </div>
+                <div class="ft-main-item">
+                    <h2 class="ft-title">Links</h2>
+                    <ul>
+                        <li><a href="#" target="_blank">Home</a></li>
+                        <li><a href="#" target="_blank">Reasons</a></li>
+                        <li><a href="#" target="_blank">Services</a></li>
+                        <li><a href="#" target="_blank">Merchandise</a></li>
+                    </ul>
+                </div>
+                <div class="ft-main-item">
+                    <h2 class="ft-title">Message US</h2>
+                </div>
+            </section>
+            <section>
+                <div class="social-wrapper">
+                    <ul>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="~/ImgAdmin/fb.png" alt="Facebook Logo" class="social-media-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="~/ImgAdmin/google.png" alt="Instagram Logo" class="social-media-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="~/ImgAdmin/google_logo.png" alt="Youtube Logo" class="social-media-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank">
+                                <img src="~/ImgAdmin/twt.png" alt="Website Logo" class="social-media-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="ft-legal">
+                <ul class="ft-legal-list">
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li>&copy; 2023 Copyright See Turtles</li>
+                </ul>
+            </section>
+        </footer>
+    </main>
+    </body>
+
+</html>

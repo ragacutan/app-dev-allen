@@ -1,0 +1,55 @@
+﻿@model SEE_TURTLES_WEB_APP_FINAL.Models.VolunteerProperty
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Account.cshtml";
+}
+<main>
+    <section class="registration-body-container">
+        <div class="registration-container">
+            <div class="side-registration">
+                <img src="~/img/login_icon.png" alt="">
+            </div>
+                <form action="" method="post" autocomplete="off" class="registration-form">
+                    <div class="registration-form-logo">
+                        <img style="position:relative; left:270px;" onclick="location.href='@Url.Action("Index", "Home")'" src="~/img/home.png">
+                    </div>
+                    <h2>Create an account</h2>
+                    <h5>Fill out the following information</h5>
+                    <div>
+                        <ValidationMessage For="() => VolunteerProperty.ConfirmPassword" />
+                        <input type="text" name="LastName" class="registration-input-box-name" placeholder="Last name" required>
+                        <input type="text" name="FirstName" class="registration-input-box-name" placeholder="First name" required>
+                        <input type="text" name="MiddleInitial" class="registration-input-box-name" placeholder="Middle initial" required>
+                    </div>
+                    <div>
+                        <input type="number" name="Age" class="registration-input-box-name" placeholder="Age" required>
+                        <select type="text" name="Sex" class="registration-input-box-name" required>
+                            <option value="" disabled selected>Sex</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                        <input type="text" name="HomeAddress" class="registration-input-box-name" placeholder="Home Address" required>
+                    </div>
+                    <input type="text" name="Organization" class="registration-input-box" placeholder="School/Organization/Agency" required>
+                    <input type="number" name="ContactNumber" class="registration-input-box" placeholder="Contact number" required>
+                    <input type="email" name="Email" class="registration-input-box" placeholder="Email" required>
+                    <input type="password" name="Password" class="registration-input-box" placeholder="Password">
+                    <input type="password" name="ConfirmPassword" class="registration-input-box" placeholder="Confirm Password" required>
+                    <input type="submit" name="submit" value="SIGN UP" id="submit-registration">
+                    <p>Have already an account? <a> Login here </a></p>
+                </form>
+        </div>
+    </section>
+</main>
+<script>
+    function checkPassword(form) {
+        const Password = form.Password.value;
+        const ConfirmPassword = form.ConfirmPassword.value;
+
+        if (Password != ConfirmPassword) {
+            alert("Error! Password did not match.");
+            return false;
+        }
+    }
+</script>

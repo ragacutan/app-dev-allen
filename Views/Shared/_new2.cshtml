@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SEE TURTLES</title>
+    <link rel="icon" href="~/icon/favicon.ico" />
+    @Styles.Render("~/Content/Training.css")
+</head>
+<body>
+    <main>
+        <header>
+            <div>
+                <div id="navbar">
+                    <img id="logo" src="~/img/see_logo.png">
+                    <nav>
+                        <ul>
+                            <li>@Html.ActionLink("PROGRAMS", "HomePage", "Account")</li>
+                            <li>@Html.ActionLink("TRAININGS", "Training", "Account")</li>
+                            <li>@Html.ActionLink("VOLUNTEERS", "Volunteers", "Home")</li>
+                            <li>@Html.ActionLink("AWARENESS", "Awareness", "Home")</li>
+                            <li>@Html.ActionLink("NEWS", "News", "Home")</li>
+                            <li>@Html.ActionLink("ABOUT", "About", "Home")</li>
+
+                        </ul>
+                    </nav>
+                    <div id="navbar-icons">
+                        <img src="~/img/contact_icon.png">
+                        <img src="~/img/shop_icon.png">
+                        <img src="~/img/search_icon.png">
+                        <img src="~/img/profile.png" onclick="location.href='@Url.Action("profile", "Account")'">
+                    </div>
+                    <button class="btn-banner-upper-rigth" onclick="myFunction()">LOGOUT</button>
+                </div>
+            </div>
+        </header>
+        @RenderBody()
+    </main>
+    </body>
+
+</html>

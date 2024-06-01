@@ -1,0 +1,23 @@
+﻿@model SEE_TURTLES_WEB_APP_FINAL.Models.VolunteerProperty
+
+@{
+    ViewBag.Title = "Confirm Email";
+    Layout = "~/Views/Shared/_Account.cshtml";
+}
+
+<section class="login-body-container">
+    <div class="login-container">
+        <div class="side-login">
+            <img src="~/ImgAdmin/curmafb.png" alt="">
+        </div>
+        <form action="Verify3" method="post" autocomplete="off" class="login-form">
+            <div class="login-form-logo">
+            </div>
+            <h2>CONFIRM USER EMAIL</h2>
+            <h5>Confirm User Email to Proceed</h5>
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            <input type="email" name="Email" class="login-input-box" placeholder="Enter Email" required>
+            <input type="submit" name="submit" value="PROCEED" id="submit-login">
+        </form>
+    </div>
+</section>

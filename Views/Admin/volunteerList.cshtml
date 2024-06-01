@@ -1,0 +1,158 @@
+﻿@model IEnumerable<SEE_TURTLES_WEB_APP_FINAL.Models.VolunteerProperty>
+
+@{
+    ViewBag.Title = "volunteerList";
+    Layout = "~/Views/Shared/_adminDashboard.cshtml";
+}
+
+@if (Session["emailid"] != null)
+{
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <div class="row-merch">
+
+                    <img src="~/ImgAdmin/curma-logo.png">
+
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a onclick="location.href='@Url.Action("dashboard", "Admin")'">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("volunteerList", "Admin")'">
+                        <i class='bx bx-box'></i>
+                        <span class="links_name">Volunteers</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("Nesting", "Admin")'">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Nesting</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("Hatchling", "Admin")'">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Hatchling</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("AddEvent", "Admin")'">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Activities</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Trainings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Awareness</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Merchandise</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a onclick="myFunction()">
+                        <i class='bx bx-log-out'></i>
+                        <span class="links_name">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <nav>
+                <div class="search-box">
+                    <input type="text" placeholder="Search here...">
+                    <i class='bx bx-search'></i>
+                </div>
+                <div class="profile-details">
+                    <img src="~/ImgAdmin/admin_profile.png" alt="">
+                    <span class="admin_name">@Html.ViewData["AdminName"]</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </nav>
+            <div class="home-content">
+                <div class="row-admin">
+                    <div class="column-admin-1">
+                        <h1>Registered Volunteers</h1>
+                        <p>Hi, <span style="text-decoration: underline;">@Html.ViewData["AdminName"]</span>! Welcome to CURMA Volunteers!.</p>
+                    </div>
+                    <div class="column-admin-2">
+                        <div class="box-title">
+                            <a onclick="location.href='@Url.Action("volunteerList", "Admin")'"><p>VOLUNTEER LIST</p></a>
+                        </div>
+                    </div>
+                    <div class="column-admin-3">
+                        <div class="box-title">
+                            <a onclick="location.href='@Url.Action("archiveList", "Admin")'"><p>ARCHIVE LIST</p></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-event-first">
+                    <div class="box-container">
+
+                        @foreach (var item in Model)
+                        {
+                            <div class="box">
+                                <div class="image">
+                                    <img src="~/ImgAdmin/profile-personnel.png" alt="">
+                                </div>
+                                <div class="content">
+                                    <div class="title">
+                                        <h3> @Html.DisplayFor(modelItem => item.FirstName) @Html.DisplayFor(modelItem => item.LastName) </h3>
+                                    </div>
+                                    <p>
+                                        Home Address: @Html.DisplayFor(modelItem => item.HomeAddress) <br>
+                                        Sex: @Html.DisplayFor(modelItem => item.Sex) <br>
+                                        Age:  @Html.DisplayFor(modelItem => item.Age) <br>
+                                        Organization: @Html.DisplayFor(modelItem => item.Organization) <br>
+                                        Email Address:  @Html.DisplayFor(modelItem => item.Email) <br>
+                                        Contact Number: @Html.DisplayFor(modelItem => item.ContactNumber)
+                                    </p>
+                                    <div class="row-user-profile">
+                                        <div class="column-user-profile">
+                                            <a class="btn-section-content-volunteer" onclick="location.href='@Url.Action("ConfirmEmail", "Admin")'">UPDATE</a>
+                                        </div>
+                                        <div class="column-user-profile">
+                                            <a class="btn-section-content-volunteer-2" onclick="location.href='@Url.Action("volunteerArchive", "Admin")'">ARCHIVE</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script>
+        function myFunction() {
+        if (confirm("Are You Sure You Want to Logout?")) {
+        var url = "@Url.Action("LoginPage", "Admin")";
+        window.location.href = url;
+            }
+        }
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+        </script>
+    </body>
+}

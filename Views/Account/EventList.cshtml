@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SEE_TURTLES_WEB_APP_FINAL.Models.EventProperty>
+
+@{
+    ViewBag.Title = "EventList";
+}
+
+<h2>EventList</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventPax)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventPax)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

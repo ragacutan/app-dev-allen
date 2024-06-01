@@ -1,0 +1,187 @@
+﻿@model IEnumerable<SEE_TURTLES_WEB_APP_FINAL.Models.TrainingProperty>
+
+@{
+    ViewBag.Title = "Training";
+    Layout = "~/Views/Shared/_new.cshtml";
+}
+    <section>
+        <!--Information 1-->
+        <div class="content-1">
+            <div class="row">
+                <div class="column">
+                    <div class="img-box">
+                        <img src="~/ImgNew/reason-icon-1.png">
+                    </div>
+                    <p>Make a difference by starting within yourself</p>
+                </div>
+                <div class="column">
+                    <div class="img-box">
+                        <img src="~/ImgNew/reason-icon-4.png">
+                    </div>
+                    <p>
+                        Learn about turtle
+                        biology and behavior
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="img-box">
+                        <img src="~/ImgNew/reason-icon-2.png">
+                    </div>
+                    <p>
+                        Meet like-minded
+                        individuals <br>and collaborate
+                    </p>
+                </div>
+                <div class="column">
+                    <div class="img-box">
+                        <img src="~/ImgNew/reason-icon-3.png">
+                    </div>
+                    <p>Gain valuable skills that <br> you can apply</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="training-section">
+        <div class="content-6">
+            <h2>Trainings and Seminars</h2>
+        </div>
+        <div class="box-container">
+            @foreach (var item in Model)
+            {
+                <div class="box">
+                    <div class="image">
+                        <img src="~/ImgNew/turtle3.jpeg" alt="">
+                    </div>
+                    <div class="date">
+                        <p>Next start date available: @Html.DisplayFor(modelItem => item.TrainingDate) </p>
+                    </div>
+                    <div class="content">
+                        <div class="place">
+                            <h5>@Html.DisplayFor(modelItem => item.TrainingLocation)</h5>
+                        </div>
+                        <div class="title">
+                            <h3>@Html.DisplayFor(modelItem => item.TrainingTitle)</h3>
+                        </div>
+                        <p>
+                            @Html.DisplayFor(modelItem => item.TrainingDescription)
+                        </p>
+                        <a href="#" class="btn-section-content">learn more ></a>
+                    </div>
+                </div>
+            }
+        </div>
+    </section>
+    <section class="blog-section">
+        <div class="content-6">
+            <h2>Latest Blog Post</h2>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <div class="image">
+                    <img src="~/ImgNew/blog-thumbnail.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h2>Halaman Para Sa Pawikan</h2>
+                    </div>
+                    <div class="author">
+                        <h5>by: Juan Dela Cruz</h5>
+                    </div>
+                    <p>
+                        On October 5, Ms. Mani Pajares of Happy Green
+                        Thumb and Ms. Golda Reyes of Yarnventure
+                        Island along with their friends came over to
+                        La Union to present and turn over their
+                        monetary.....
+                    </p>
+                    <a href="#" class="btn-section-content">read post ></a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="~/ImgNew/blog-thumbnail.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h2>Halaman Para Sa Pawikan</h2>
+                    </div>
+                    <div class="author">
+                        <h5>by: Juan Dela Cruz</h5>
+                    </div>
+                    <p>
+                        On October 5, Ms. Mani Pajares of Happy Green
+                        Thumb and Ms. Golda Reyes of Yarnventure
+                        Island along with their friends came over to
+                        La Union to present and turn over their
+                        monetary.....
+                    </p>
+                    <a href="#" class="btn-section-content">read post ></a>
+                </div>
+            </div>
+            <div class="box">
+                <div class="image">
+                    <img src="~/ImgNew/blog-thumbnail.png" alt="">
+                </div>
+                <div class="content">
+                    <div class="title">
+                        <h2>Halaman Para Sa Pawikan</h2>
+                    </div>
+                    <div class="author">
+                        <h5>by: Juan Dela Cruz</h5>
+                    </div>
+                    <p>
+                        On October 5, Ms. Mani Pajares of Happy Green
+                        Thumb and Ms. Golda Reyes of Yarnventure
+                        Island along with their friends came over to
+                        La Union to present and turn over their
+                        monetary.....
+                    </p>
+                    <a href="#" class="btn-section-content">read post ></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section>
+        <div class="content-alternative">
+            <div class="row-alternative">
+                <div class="column-alternative">
+                    <div class="img-box">
+                        <img src="~/ImgNew/E1.png">
+                    </div>
+                    <p>Upcoming Activities</p>
+                </div>
+                <div class="column-alternative">
+                    <div class="img-box">
+                        <img src="~/ImgNew/E4.png">
+                    </div>
+                    <p>Goal for the month</p>
+                </div>
+                <div class="column-alternative">
+                    <div class="img-box">
+                        <img src="~/ImgNew/E2.png">
+                    </div>
+                    <p>Latest news</p>
+                </div>
+                <div class="column-alternative">
+                    <div class="img-box">
+                        <img src="~/ImgNew/E3.png">
+                    </div>
+                    <p>My progress</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contacts">
+        <div class="contact-container">
+            <div class="cta-content">
+                <h4 class="section-subtitle">Call To Action</h4>
+                <h2 class="section-title-contact">Join the turtle conservation <br> movement and make a difference</h2>
+                <p class="section-text">
+                    Saving sea turtles is essential for the health and well-being of our planet's oceans
+                    <br>and the diverse array of species that call it home
+                </p>
+            </div>
+            <button class="btn btn-secondary">VOLUNTEER NOW!</button>
+        </div>
+    </section>

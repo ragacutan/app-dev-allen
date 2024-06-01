@@ -1,0 +1,656 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{70B06265-96CE-41FD-A692-AF2C15223094}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SEE_TURTLES_WEB_APP_FINAL</RootNamespace>
+    <AssemblyName>SEE_TURTLES_WEB_APP_FINAL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44380</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Protobuf, Version=3.21.9.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Protobuf.3.21.9\lib\net45\Google.Protobuf.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.1.3.5\lib\net462\K4os.Compression.LZ4.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Compression.LZ4.Streams, Version=1.3.5.0, Culture=neutral, PublicKeyToken=2186fa9121ef231d, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Compression.LZ4.Streams.1.3.5\lib\net462\K4os.Compression.LZ4.Streams.dll</HintPath>
+    </Reference>
+    <Reference Include="K4os.Hash.xxHash, Version=1.0.8.0, Culture=neutral, PublicKeyToken=32cd54395057cec3, processorArchitecture=MSIL">
+      <HintPath>packages\K4os.Hash.xxHash.1.0.8\lib\net462\K4os.Hash.xxHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MySql.Data, Version=8.0.33.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>packages\MySql.Data.8.0.33\lib\net462\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.AspNet.WebApi.Client.5.2.9\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Models\AdminProperty.cs" />
+    <Compile Include="Models\JoinImplementation.cs" />
+    <Compile Include="Models\EventImplementation.cs" />
+    <Compile Include="Models\JoinProperty.cs" />
+    <Compile Include="Models\TrainingImplementation.cs" />
+    <Compile Include="Models\TrainingProperty.cs" />
+    <Compile Include="Models\VolunteerImplementation.cs" />
+    <Compile Include="Models\VolunteerProperty.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\EventProperty.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Account.css" />
+    <Content Include="Content\Dashboard.css" />
+    <Content Include="Content\Index.css" />
+    <Content Include="Content\Profile.css" />
+    <Content Include="Content\Program.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\Training.css" />
+    <Content Include="Global.asax" />
+    <Content Include="icon\favicon.ico" />
+    <Content Include="ImgAdmin\about-banner.png" />
+    <Content Include="ImgAdmin\admin_profile.png" />
+    <Content Include="ImgAdmin\awareness-banner.png" />
+    <Content Include="ImgAdmin\banner-training.png" />
+    <Content Include="ImgAdmin\blog-thumbnail.png" />
+    <Content Include="ImgAdmin\cart.png" />
+    <Content Include="ImgAdmin\cart_icon.png" />
+    <Content Include="ImgAdmin\change_password.png" />
+    <Content Include="ImgAdmin\check.png" />
+    <Content Include="ImgAdmin\contact_banner.png" />
+    <Content Include="ImgAdmin\contact_icon.png" />
+    <Content Include="ImgAdmin\curma-logo.png" />
+    <Content Include="ImgAdmin\curma-thumbnail.jpg" />
+    <Content Include="ImgAdmin\curmafb.png" />
+    <Content Include="ImgAdmin\curma_logo.png" />
+    <Content Include="ImgAdmin\dashboard_icon.png" />
+    <Content Include="ImgAdmin\date.png" />
+    <Content Include="ImgAdmin\E1.png" />
+    <Content Include="ImgAdmin\E2.png" />
+    <Content Include="ImgAdmin\E3.png" />
+    <Content Include="ImgAdmin\E4.png" />
+    <Content Include="ImgAdmin\email-icon.png" />
+    <Content Include="ImgAdmin\fb.png" />
+    <Content Include="ImgAdmin\footer_logo.png" />
+    <Content Include="ImgAdmin\google.png" />
+    <Content Include="ImgAdmin\google_logo.png" />
+    <Content Include="ImgAdmin\graph-1.png" />
+    <Content Include="ImgAdmin\graph-2.png" />
+    <Content Include="ImgAdmin\graph-3.png" />
+    <Content Include="ImgAdmin\graph-4.png" />
+    <Content Include="ImgAdmin\graph-6.png" />
+    <Content Include="ImgAdmin\graph-7.png" />
+    <Content Include="ImgAdmin\hat.png" />
+    <Content Include="ImgAdmin\hatchling.png" />
+    <Content Include="ImgAdmin\hatchling_icon.png" />
+    <Content Include="ImgAdmin\Home %281%29.png" />
+    <Content Include="ImgAdmin\home.png" />
+    <Content Include="ImgAdmin\homepage.png" />
+    <Content Include="ImgAdmin\home_2.png" />
+    <Content Include="ImgAdmin\infographic-1.png" />
+    <Content Include="ImgAdmin\infographic-2.png" />
+    <Content Include="ImgAdmin\infographic-3.png" />
+    <Content Include="ImgAdmin\infographic-4.png" />
+    <Content Include="ImgAdmin\landing_page_banner.png" />
+    <Content Include="ImgAdmin\location-icon.png" />
+    <Content Include="ImgAdmin\location_mark.png" />
+    <Content Include="ImgAdmin\logout.png" />
+    <Content Include="ImgAdmin\merch1.png" />
+    <Content Include="ImgAdmin\merch2.png" />
+    <Content Include="ImgAdmin\merch3.png" />
+    <Content Include="ImgAdmin\merch4.png" />
+    <Content Include="ImgAdmin\merch5.png" />
+    <Content Include="ImgAdmin\merch6.png" />
+    <Content Include="ImgAdmin\merchandise_banner.png" />
+    <Content Include="ImgAdmin\merchandise_page_banner.png" />
+    <Content Include="ImgAdmin\message.png" />
+    <Content Include="ImgAdmin\messages.png" />
+    <Content Include="ImgAdmin\message_icon.png" />
+    <Content Include="ImgAdmin\nesting_icon.png" />
+    <Content Include="ImgAdmin\news.png" />
+    <Content Include="ImgAdmin\news_banner.png" />
+    <Content Include="ImgAdmin\notification.png" />
+    <Content Include="ImgAdmin\oneA.png" />
+    <Content Include="ImgAdmin\oneB.png" />
+    <Content Include="ImgAdmin\password.png" />
+    <Content Include="ImgAdmin\pax_icon.png" />
+    <Content Include="ImgAdmin\phone-icon.png" />
+    <Content Include="ImgAdmin\point.png" />
+    <Content Include="ImgAdmin\profile-image.png" />
+    <Content Include="ImgAdmin\profile-personnel.png" />
+    <Content Include="ImgAdmin\profile.png" />
+    <Content Include="ImgAdmin\profile_icon.png" />
+    <Content Include="ImgAdmin\program_banner.png" />
+    <Content Include="ImgAdmin\rating.png" />
+    <Content Include="ImgAdmin\reason-icon-1.png" />
+    <Content Include="ImgAdmin\reason-icon-2.png" />
+    <Content Include="ImgAdmin\reason-icon-3.png" />
+    <Content Include="ImgAdmin\reason-icon-4.png" />
+    <Content Include="ImgAdmin\reason1.png" />
+    <Content Include="ImgAdmin\reason2.png" />
+    <Content Include="ImgAdmin\reason3.png" />
+    <Content Include="ImgAdmin\search_icon.png" />
+    <Content Include="ImgAdmin\see_logo.png" />
+    <Content Include="ImgAdmin\service1.png" />
+    <Content Include="ImgAdmin\service2.png" />
+    <Content Include="ImgAdmin\service3.png" />
+    <Content Include="ImgAdmin\service4.png" />
+    <Content Include="ImgAdmin\service5.png" />
+    <Content Include="ImgAdmin\service6.png" />
+    <Content Include="ImgAdmin\setting.png" />
+    <Content Include="ImgAdmin\setting_icon.png" />
+    <Content Include="ImgAdmin\shop_icon.png" />
+    <Content Include="ImgAdmin\success.png" />
+    <Content Include="ImgAdmin\target_icon.png" />
+    <Content Include="ImgAdmin\turtle-4.jpeg" />
+    <Content Include="ImgAdmin\turtle.jpeg" />
+    <Content Include="ImgAdmin\turtle.png" />
+    <Content Include="ImgAdmin\turtle2.jpeg" />
+    <Content Include="ImgAdmin\turtle3.jpeg" />
+    <Content Include="ImgAdmin\twoA.png" />
+    <Content Include="ImgAdmin\twoB.png" />
+    <Content Include="ImgAdmin\twt.png" />
+    <Content Include="ImgAdmin\UP.png" />
+    <Content Include="ImgAdmin\volunteer-banner.png" />
+    <Content Include="ImgAdmin\volunteer-icon.png" />
+    <Content Include="ImgAdmin\volunteer-opportunity-1.png" />
+    <Content Include="ImgAdmin\volunteer-opportunity-2.png" />
+    <Content Include="ImgAdmin\volunteer-opportunity-3.png" />
+    <Content Include="ImgAdmin\volunteer_icon.png" />
+    <Content Include="ImgAdmin\warning.png" />
+    <Content Include="ImgAdmin\workshop.png" />
+    <Content Include="ImgNew\about-banner.png" />
+    <Content Include="ImgNew\awareness-banner.png" />
+    <Content Include="ImgNew\banner-training.png" />
+    <Content Include="ImgNew\blog-thumbnail.png" />
+    <Content Include="ImgNew\cart.png" />
+    <Content Include="ImgNew\cart_icon.png" />
+    <Content Include="ImgNew\change_password.png" />
+    <Content Include="ImgNew\check.png" />
+    <Content Include="ImgNew\contact_banner.png" />
+    <Content Include="ImgNew\contact_icon.png" />
+    <Content Include="ImgNew\curma-logo.png" />
+    <Content Include="ImgNew\curma-thumbnail.jpg" />
+    <Content Include="ImgNew\curma_logo.png" />
+    <Content Include="ImgNew\dashboard_icon.png" />
+    <Content Include="ImgNew\date.png" />
+    <Content Include="ImgNew\E1.png" />
+    <Content Include="ImgNew\E2.png" />
+    <Content Include="ImgNew\E3.png" />
+    <Content Include="ImgNew\E4.png" />
+    <Content Include="ImgNew\email-icon.png" />
+    <Content Include="ImgNew\fb.png" />
+    <Content Include="ImgNew\footer_logo.png" />
+    <Content Include="ImgNew\google.png" />
+    <Content Include="ImgNew\google_logo.png" />
+    <Content Include="ImgNew\hat.png" />
+    <Content Include="ImgNew\hatchling.png" />
+    <Content Include="ImgNew\hatchling_icon.png" />
+    <Content Include="ImgNew\Home %281%29.png" />
+    <Content Include="ImgNew\home.png" />
+    <Content Include="ImgNew\homepage.png" />
+    <Content Include="ImgNew\home_2.png" />
+    <Content Include="ImgNew\infographic-1.png" />
+    <Content Include="ImgNew\infographic-2.png" />
+    <Content Include="ImgNew\infographic-3.png" />
+    <Content Include="ImgNew\infographic-4.png" />
+    <Content Include="ImgNew\landing_page_banner.png" />
+    <Content Include="ImgNew\location-icon.png" />
+    <Content Include="ImgNew\location_mark.png" />
+    <Content Include="ImgNew\logout.png" />
+    <Content Include="ImgNew\merch1.png" />
+    <Content Include="ImgNew\merch2.png" />
+    <Content Include="ImgNew\merch3.png" />
+    <Content Include="ImgNew\merch4.png" />
+    <Content Include="ImgNew\merch5.png" />
+    <Content Include="ImgNew\merch6.png" />
+    <Content Include="ImgNew\merchandise_banner.png" />
+    <Content Include="ImgNew\merchandise_page_banner.png" />
+    <Content Include="ImgNew\message.png" />
+    <Content Include="ImgNew\messages.png" />
+    <Content Include="ImgNew\message_icon.png" />
+    <Content Include="ImgNew\nesting_icon.png" />
+    <Content Include="ImgNew\news.png" />
+    <Content Include="ImgNew\news_banner.png" />
+    <Content Include="ImgNew\notification.png" />
+    <Content Include="ImgNew\password.png" />
+    <Content Include="ImgNew\pax_icon.png" />
+    <Content Include="ImgNew\phone-icon.png" />
+    <Content Include="ImgNew\point.png" />
+    <Content Include="ImgNew\profile-image.png" />
+    <Content Include="ImgNew\profile-personnel.png" />
+    <Content Include="ImgNew\profile.png" />
+    <Content Include="ImgNew\profile_icon.png" />
+    <Content Include="ImgNew\program_banner.png" />
+    <Content Include="ImgNew\rating.png" />
+    <Content Include="ImgNew\reason-icon-1.png" />
+    <Content Include="ImgNew\reason-icon-2.png" />
+    <Content Include="ImgNew\reason-icon-3.png" />
+    <Content Include="ImgNew\reason-icon-4.png" />
+    <Content Include="ImgNew\reason1.png" />
+    <Content Include="ImgNew\reason2.png" />
+    <Content Include="ImgNew\reason3.png" />
+    <Content Include="ImgNew\search_icon.png" />
+    <Content Include="ImgNew\see_logo.png" />
+    <Content Include="ImgNew\service1.png" />
+    <Content Include="ImgNew\service2.png" />
+    <Content Include="ImgNew\service3.png" />
+    <Content Include="ImgNew\service4.png" />
+    <Content Include="ImgNew\service5.png" />
+    <Content Include="ImgNew\service6.png" />
+    <Content Include="ImgNew\setting.png" />
+    <Content Include="ImgNew\setting_icon.png" />
+    <Content Include="ImgNew\shop_icon.png" />
+    <Content Include="ImgNew\success.png" />
+    <Content Include="ImgNew\target_icon.png" />
+    <Content Include="ImgNew\turtle-4.jpeg" />
+    <Content Include="ImgNew\turtle.jpeg" />
+    <Content Include="ImgNew\turtle.png" />
+    <Content Include="ImgNew\turtle2.jpeg" />
+    <Content Include="ImgNew\turtle3.jpeg" />
+    <Content Include="ImgNew\twt.png" />
+    <Content Include="ImgNew\UP.png" />
+    <Content Include="ImgNew\volunteer-banner.png" />
+    <Content Include="ImgNew\volunteer-opportunity-1.png" />
+    <Content Include="ImgNew\volunteer-opportunity-2.png" />
+    <Content Include="ImgNew\volunteer-opportunity-3.png" />
+    <Content Include="ImgNew\volunteer_icon.png" />
+    <Content Include="ImgNew\warning.png" />
+    <Content Include="ImgNew\workshop.png" />
+    <Content Include="Img\1.1.png" />
+    <Content Include="Img\1.2.png" />
+    <Content Include="Img\1.png" />
+    <Content Include="Img\2.png" />
+    <Content Include="Img\about-banner.png" />
+    <Content Include="Img\account.png" />
+    <Content Include="Img\address_icon.png" />
+    <Content Include="Img\admin_profile.png" />
+    <Content Include="Img\awareness-banner.png" />
+    <Content Include="Img\awareness_icon.png" />
+    <Content Include="Img\back.png" />
+    <Content Include="Img\banner-training.png" />
+    <Content Include="Img\beach_cleanup.png" />
+    <Content Include="Img\blog-thumbnail.png" />
+    <Content Include="Img\blog_banner.png" />
+    <Content Include="Img\cart.png" />
+    <Content Include="Img\cart_icon.png" />
+    <Content Include="Img\change_password.png" />
+    <Content Include="Img\check.png" />
+    <Content Include="Img\contact_banner.png" />
+    <Content Include="Img\contact_icon.png" />
+    <Content Include="Img\curma-thumbnail.jpg" />
+    <Content Include="Img\curma_logo.png" />
+    <Content Include="Img\dashboard_icon.png" />
+    <Content Include="Img\date.png" />
+    <Content Include="Img\E2.png" />
+    <Content Include="Img\E3.png" />
+    <Content Include="Img\E4.png" />
+    <Content Include="Img\email-icon.png" />
+    <Content Include="Img\fb.png" />
+    <Content Include="Img\footer_logo.png" />
+    <Content Include="Img\google-logo.png" />
+    <Content Include="Img\google.png" />
+    <Content Include="Img\google_logo.png" />
+    <Content Include="Img\hat.png" />
+    <Content Include="Img\hatchling.png" />
+    <Content Include="Img\hatchling_icon.png" />
+    <Content Include="Img\Home %281%29.png" />
+    <Content Include="Img\home.png" />
+    <Content Include="Img\homepage.png" />
+    <Content Include="Img\home_2.png" />
+    <Content Include="Img\infographic-1.png" />
+    <Content Include="Img\infographic-2.png" />
+    <Content Include="Img\infographic-3.png" />
+    <Content Include="Img\infographic-4.png" />
+    <Content Include="Img\landing_page_banner.png" />
+    <Content Include="Img\location-icon.png" />
+    <Content Include="Img\location_mark.png" />
+    <Content Include="Img\login_icon.png" />
+    <Content Include="Img\logout.png" />
+    <Content Include="Img\mearch4.png" />
+    <Content Include="Img\merch1.png" />
+    <Content Include="Img\merch2.png" />
+    <Content Include="Img\merch3.png" />
+    <Content Include="Img\merch4.png" />
+    <Content Include="Img\merch5.png" />
+    <Content Include="Img\merch6.png" />
+    <Content Include="Img\merchandise_banner.png" />
+    <Content Include="Img\merchandise_page_banner.png" />
+    <Content Include="Img\message.png" />
+    <Content Include="Img\messages.png" />
+    <Content Include="Img\message_icon.png" />
+    <Content Include="Img\nesting_icon.png" />
+    <Content Include="Img\news.png" />
+    <Content Include="Img\news_banner.png" />
+    <Content Include="Img\notification.png" />
+    <Content Include="Img\password.png" />
+    <Content Include="Img\pax_icon.png" />
+    <Content Include="Img\phone-icon.png" />
+    <Content Include="Img\point.png" />
+    <Content Include="Img\profile-image.png" />
+    <Content Include="Img\profile-personnel.png" />
+    <Content Include="Img\profile.png" />
+    <Content Include="Img\profile_icon.png" />
+    <Content Include="Img\program_banner.png" />
+    <Content Include="Img\rating.png" />
+    <Content Include="Img\reason-icon-1.png" />
+    <Content Include="Img\reason-icon-2.png" />
+    <Content Include="Img\reason-icon-3.png" />
+    <Content Include="Img\reason-icon-4.png" />
+    <Content Include="Img\reason1.png" />
+    <Content Include="Img\reason2.png" />
+    <Content Include="Img\reason3.png" />
+    <Content Include="Img\search_icon.png" />
+    <Content Include="Img\see_logo.png" />
+    <Content Include="Img\service1.png" />
+    <Content Include="Img\service2.png" />
+    <Content Include="Img\service3.png" />
+    <Content Include="Img\service4.png" />
+    <Content Include="Img\service5.png" />
+    <Content Include="Img\service6.png" />
+    <Content Include="Img\setting.png" />
+    <Content Include="Img\setting_icon.png" />
+    <Content Include="Img\shop_icon.png" />
+    <Content Include="Img\success.png" />
+    <Content Include="Img\target_icon.png" />
+    <Content Include="Img\turtle-4.jpeg" />
+    <Content Include="Img\turtle.jpeg" />
+    <Content Include="Img\turtle.png" />
+    <Content Include="Img\turtle2.jpeg" />
+    <Content Include="Img\turtle3.jpeg" />
+    <Content Include="Img\turtle5.png" />
+    <Content Include="Img\turtlesand5.png" />
+    <Content Include="Img\twt.png" />
+    <Content Include="Img\UP.png" />
+    <Content Include="Img\volunteer-banner.png" />
+    <Content Include="Img\volunteer-opportunity-1.png" />
+    <Content Include="Img\volunteer-opportunity-2.png" />
+    <Content Include="Img\volunteer-opportunity-3.png" />
+    <Content Include="Img\volunteer_icon.png" />
+    <Content Include="Img\warning.png" />
+    <Content Include="Img\workshop.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\Poppins-Black.ttf" />
+    <Content Include="fonts\Poppins-BlackItalic.ttf" />
+    <Content Include="fonts\Poppins-Bold.ttf" />
+    <Content Include="fonts\Poppins-BoldItalic.ttf" />
+    <Content Include="fonts\Poppins-ExtraBold.ttf" />
+    <Content Include="fonts\Poppins-ExtraBoldItalic.ttf" />
+    <Content Include="fonts\Poppins-ExtraLight.ttf" />
+    <Content Include="fonts\Poppins-ExtraLightItalic.ttf" />
+    <Content Include="fonts\Poppins-Italic.ttf" />
+    <Content Include="fonts\Poppins-Light.ttf" />
+    <Content Include="fonts\Poppins-LightItalic.ttf" />
+    <Content Include="fonts\Poppins-Medium.ttf" />
+    <Content Include="fonts\Poppins-MediumItalic.ttf" />
+    <Content Include="fonts\Poppins-Regular.ttf" />
+    <Content Include="fonts\Poppins-SemiBold.ttf" />
+    <Content Include="fonts\Poppins-SemiBoldItalic.ttf" />
+    <Content Include="fonts\Poppins-Thin.ttf" />
+    <Content Include="fonts\Poppins-ThinItalic.ttf" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Account\Create.cshtml" />
+    <Content Include="Views\Shared\_indexLayout.cshtml" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\Shared\_Account.cshtml" />
+    <Content Include="Views\Account\HomePage.cshtml" />
+    <Content Include="Views\Shared\_Main.cshtml" />
+    <Content Include="Views\Account\profile.cshtml" />
+    <Content Include="Views\Shared\_profile.cshtml" />
+    <Content Include="Views\Account\UpdateProfile.cshtml" />
+    <Content Include="Views\Shared\_programs.cshtml" />
+    <Content Include="Views\Account\programs.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Admin\LoginPage.cshtml" />
+    <Content Include="Views\Admin\dashboard.cshtml" />
+    <Content Include="Views\Shared\_adminDashboard.cshtml" />
+    <Content Include="Views\Admin\AddEvent.cshtml" />
+    <Content Include="Views\Account\EventList.cshtml" />
+    <Content Include="Views\Admin\_volunteerList.cshtml" />
+    <Content Include="Views\Admin\volunteerList.cshtml" />
+    <Content Include="Views\Admin\UpdateProfile.cshtml" />
+    <Content Include="Views\Admin\ConfirmEmail.cshtml" />
+    <Content Include="Views\Admin\volunteerArchive.cshtml" />
+    <Content Include="Views\Admin\archiveProfile.cshtml" />
+    <Content Include="Views\Admin\archiveList.cshtml" />
+    <Content Include="Views\Admin\volunteerUnarchive.cshtml" />
+    <Content Include="Views\Admin\UnarchiveProfile.cshtml" />
+    <Content Include="Views\Admin\DeleteProfile.cshtml" />
+    <Content Include="Views\Admin\Nesting.cshtml" />
+    <Content Include="Views\Admin\Hatchling.cshtml" />
+    <Content Include="Views\Admin\dashboard2.cshtml" />
+    <Content Include="Views\Account\_Training.cshtml" />
+    <Content Include="Views\Shared\_new.cshtml" />
+    <Content Include="Views\Account\Training.cshtml" />
+    <Content Include="Views\Shared\_new2.cshtml" />
+    <Content Include="Views\Account\Join.cshtml" />
+    <Content Include="Views\Account\joinList.cshtml" />
+    <Content Include="Views\Admin\joinedVol.cshtml" />
+    <Content Include="Views\Admin\joinedVolunteer.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Views\TrainingImplementation\" />
+    <Folder Include="Views\Training\" />
+    <Folder Include="Views\VolunteerImplementation\" />
+    <Folder Include="Views\VolunteerProperty\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59133</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44380/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

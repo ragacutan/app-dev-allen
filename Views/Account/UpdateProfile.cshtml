@@ -1,0 +1,79 @@
+﻿@model SEE_TURTLES_WEB_APP_FINAL.Models.VolunteerProperty
+
+@{
+    ViewBag.Title = "updateprofile";
+    Layout = "~/Views/Shared/_profile.cshtml";
+}
+
+@if (Session["emailid"] != null)
+{
+    <section class="profile">
+        <div class="title">
+            <h1>Update user profile</h1>
+        </div>
+        <div class="row-profile">
+            <div class="column-profile-edit-1">
+                <div class="profile-image-box">
+                    <img src="img/profile-image.png" alt="">
+                </div>
+                <div class="profile-name">
+                    <h2>@Html.ViewData["Firstname"] @Html.ViewData["Lastname"]</h2>
+                </div>
+                <div class="profile-button-1">
+                    <a href="#" class="btn-profile">Select Profile Picture</a>
+                </div>
+            </div>
+            <div class="column-profile-edit-2">
+                <h2>General Information</h2>
+                <form action="" method="post">
+                    <table class="edit-profile">
+                        <tbody>
+                            <tr>
+                                <td>Last Name: </td>
+                                <td><input type="text" name="LastName" value="@Html.ViewData["Lastname"]" class="edit-profile-input-box"></td>
+                            </tr>
+                            <tr>
+                                <td>First Name: </td>
+                                <td><input type="text" name="FirstName" value=" @Html.ViewData["Firstname"]" class="edit-profile-input-box"></td>
+                            </tr>
+                            <tr>
+                                <td>Middle Initial: </td>
+                                <td><input type="text" name="MiddleInitial" value="@Html.ViewData["Middleinitial"]" class="edit-profile-input-box"></td>
+                            </tr>
+                            <tr>
+                                <td>Age </td>
+                                <td><input type="number" name="Age" value=" @Html.ViewData["Age"]" class="edit-profile-input-box"></td>
+                            </tr>
+                            <tr>
+                                <td>Sex:</td>
+                                <td><input type="text" name="Sex" value=" @Html.ViewData["Sex"]" class="edit-profile-input-box"></td>
+                            </tr>
+                            <tr>
+                                <td>Home Address: </td>
+                                <td><input type="text" name="HomeAddress" value="@Html.ViewData["Homeaddress"]" class="edit-profile-input-box"></td>
+                            </tr>
+                            <tr>
+                                <td>Organization:</td>
+                                <td><input type="text" name="Organization" value="@Html.ViewData["Organization"]" class="edit-profile-input-box"></td>
+                            </tr>
+                            <tr>
+                                <td>Contact Number: </td>
+                                <td><input type="number" name="ContactNumber" value="@Html.ViewData["Contact"]" class="edit-profile-input-box"></td>
+                            </tr>
+                            <tr>
+                                <td>Email: </td>
+                                <td><input type="email" name="Email" value="@Session["emailid"].ToString()" class="edit-profile-input-box"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="edit-profile-button">
+                        <div id="profile-buttons">
+                            <button id="btn-edit-profile-1" onclick="location.href='@Url.Action("Profile", "Account")'">Back</button>
+                            <button id="btn-edit-profile-2" onclick="location.href='@Url.Action("Profile", "Account")'">Save changes</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+}

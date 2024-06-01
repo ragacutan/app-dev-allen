@@ -1,0 +1,146 @@
+﻿@model SEE_TURTLES_WEB_APP_FINAL.Models.VolunteerProperty
+
+@{
+    ViewBag.Title = "Unarchive Profile";
+    Layout = "~/Views/Shared/_adminDashboard.cshtml";
+}
+
+
+@if (Session["emailid4"] != null)
+{
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <div class="row-merch">
+
+                    <img src="~/ImgAdmin/curma-logo.png">
+
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a onclick="location.href='@Url.Action("dashboard", "Admin")'">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("volunteerList", "Admin")'">
+                        <i class='bx bx-box'></i>
+                        <span class="links_name">Volunteers</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("Nesting", "Admin")'">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Nesting</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("Hatchling", "Admin")'">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Hatchling</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("AddEvents", "Admin")'">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Activities</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Trainings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Awareness</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Merchandise</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a href="logout.php?logout=true">
+                        <i class='bx bx-log-out'></i>
+                        <span class="links_name">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <nav>
+                <div class="search-box">
+                    <input type="text" placeholder="Search here...">
+                    <i class='bx bx-search'></i>
+                </div>
+                <div class="profile-details">
+                    <img src="~/ImgAdmin/admin_profile.png" alt="">
+                    <span class="admin_name">Admin Panel</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </nav>
+            <div class="home-content">
+                <div class="row-admin">
+                    <div class="column-admin-2">
+                        <div class="box-title">
+                            <p>.</p>
+                        </div>
+                    </div>
+                    <div class="column-admin-3">
+                        <div class="box-title">
+                            <p>.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-form">UNARCHIVE VOLUNTEER</div>
+                <div class="row-event-first">
+                    <div class="column-event-1">
+                        <div class="box-1">
+                            <form action="" method="post" autocomplete="off" class="event-form">
+                                <input type="text" name="LastName" class="event-input-box" value="@Html.ViewData["Lastname"]">
+                                <input type="text" name="FirstName" class="event-input-box" value="@Html.ViewData["Firstname"]">
+                                <input type="text" name="MiddleInitial" class="event-input-box" value="@Html.ViewData["Lastname"]">
+                                <div>
+                                    <input type="text" name="HomeAddress" class="event-input-box-name" value="@Html.ViewData["Homeaddress"]">
+                                    <select type="text" name="Sex" class="event-input-box-name">
+                                        <option value="" disabled selected>@Html.ViewData["Sex"]</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <input type="number" name="Age" class="event-input-box-name" value="@Html.ViewData["Age"]">
+                                    <input type="text" name="Organization" class="event-input-box-name" value="@Html.ViewData["Organization"]">
+                                </div>
+                                <input type="number" name="ContactNumber" class="event-input-box" value="@Html.ViewData["Contact"]">
+                                <input type="email" name="Email" class="event-input-box" value="@Html.ViewData["Email"]">
+                                <input type="password" name="Password" class="event-input-box" value="@Html.ViewData["Password"]">
+                                <input type="password" name="ConfirmPassword" class="event-input-box" value="@Html.ViewData["Password"]">
+                                <input type="submit" name="submit" value="UNARCHIVE" id="submit-registration">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="column-event-2">
+                        <div class="box-1">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+}
+

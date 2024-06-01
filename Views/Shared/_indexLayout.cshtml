@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SEE TURTLES</title>
+    <link rel="icon" href="~/icon/favicon.ico" />
+    @Styles.Render("~/Content/Index.css")
+</head>
+<body>
+    <main>
+        <header>
+            <div id="banner">
+                <div id="navbar">
+                    <img id="logo" src="~/img/see_logo.png">
+                    <nav>
+                        <ul>
+                            <li>@Html.ActionLink("PROGRAMS", "Index", "Home")</li>
+                            <li>@Html.ActionLink("TRAININGS", "Login", "Account")</li>
+                            <li>@Html.ActionLink("VOLUNTEERS", "Login", "Account")</li>
+                            <li>@Html.ActionLink("AWARENESS", "Login", "Account")</li>
+                            <li>@Html.ActionLink("NEWS", "Login", "Account")</li>
+                            <li>@Html.ActionLink("ABOUT", "Login", "Account")</li>
+
+                        </ul>
+                    </nav>
+                    <div id="navbar-icons">
+                        <img onclick="location.href='@Url.Action("Login", "Account")'" src="~/img/contact_icon.png">
+                        <img onclick="location.href='@Url.Action("Login", "Account")'" src="~/img/shop_icon.png">
+                        <img onclick="location.href='@Url.Action("Login", "Account")'" src="~/img/search_icon.png">
+                    </div>
+                    <button class="btn-banner-upper-rigth" onclick="location.href='@Url.Action("Login", "Account")'">LOGIN</button>
+                    <button class="btn-banner-upper-rigth_2" onclick="location.href='@Url.Action("Create", "Account")'">JOIN</button>
+                </div>
+                <div class="content-banner">
+                    <h1>SAVE THE TURTLES<br>ACT NOW</h1>
+                    <p>
+                        Turtles are facing numerous threats to their survival, and it is <br> up to all of us to take
+                        action to protect them.
+                    </p>
+                    <div class="btn-banner-group">
+                        <a onclick="location.href='@Url.Action("Create", "Account")'" class="btn-banner-first">SIGN UP NOW</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        @RenderBody()
+        </main>
+</body>
+</html>

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - SEE TURTLES</title>
+    <link rel="icon" href="~/icon/favicon.ico" />
+    @Styles.Render("~/Content/Index.css")
+</head>
+<body>
+    <main>
+        @RenderBody()
+        <!--Footer-->
+        <footer>
+            <section class="ft-main">
+                <div class="ft-main-item">
+                    <div><img src="~/img/footer_logo.png"></div>
+                    <p>
+                        We work to protect sea turtle populations and their<br>
+                        habitats from threats such as pollution, habitat destruction, <br>
+                        and climate change. We also raise public awareness about <br>
+                        the importance of sea turtles and their role in maintaining<br>
+                        healthy marine ecosystems.
+                    </p>
+                </div>
+                <div class="ft-main-item">
+                    <h2 class="ft-title">Office</h2>
+                    <p>
+                        374 St. Jude Subdivision, <br>
+                        Ili Norte,, 2514 San Juan, La Union<br>
+                        <br>
+                        Phone Number +639423664519
+                    </p>
+                </div>
+                <div class="ft-main-item">
+                    <h2 class="ft-title">Links</h2>
+                    <ul>
+                        <li><a href="#" target="_blank">Home</a></li>
+                        <li><a href="#" target="_blank">Reasons</a></li>
+                        <li><a href="#" target="_blank">Services</a></li>
+                        <li><a href="#" target="_blank">Merchandise</a></li>
+                    </ul>
+                </div>
+                <div class="ft-main-item">
+                    <h2 class="ft-title">Message US</h2>
+                </div>
+            </section>
+            <section>
+                <div class="social-wrapper">
+                    <ul>
+                        <li>
+                            <a href="https://www.facebook.com/dennisloren.tacubanza17" target="_blank">
+                                <img src="~/img/fb.png" alt="Facebook Logo" class="social-media-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://instagram.com/denith_lowen?igshid=YmMyMTA2M2Y=" target="_blank">
+                                <img src="~/img/google.png" alt="Instagram Logo" class="social-media-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://youtube.com/channel/UCBXFl1CxsSb1dRCiG6ZG2kg" target="_blank">
+                                <img src="~/img/google_logo.png" alt="Youtube Logo" class="social-media-icon">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://sites.google.com/view/tacubanza/home" target="_blank">
+                                <img src="~/img/twt.png" alt="Website Logo" class="social-media-icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <section class="ft-legal">
+                <ul class="ft-legal-list">
+                    <li><a href="#">Terms &amp; Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li>&copy; 2023 Copyright See Turtles</li>
+                </ul>
+            </section>
+        </footer>
+        <script>
+        function myFunction() {
+        if (confirm("Are You Sure You Want to Logout?")) {
+        var url = "@Url.Action("Index", "Home")";
+        window.location.href = url;
+            }
+        }
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+        </script>
+    </main>
+</body>
+</html>

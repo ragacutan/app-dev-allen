@@ -1,0 +1,111 @@
+﻿@model SEE_TURTLES_WEB_APP_FINAL.Models.JoinProperty
+
+@{
+    ViewBag.Title = "Join Event";
+    Layout = "~/Views/Shared/_new2.cshtml";
+}
+
+<section class="row-join-event">
+    <div class="row-event-container">
+        <div class="row-event-container-box">
+            <div class="column-event-1">
+                <section class="event-section">
+                    <div class="box-container">
+                        <div class="box">
+                            <h4>Ili Norte, San Juan, La Union</h4>
+                            <p>Nest monitoring</p>
+                            <div class="image">
+                                <img src="~/ImgAdmin/turtle3.jpeg" alt="">
+                            </div>
+                            <div class="date">
+                                Next start date available: Mar 27, 2023
+                            </div>
+                            <div class="content">
+                                <div class="title">
+                                    <h3>Captive Breeding and Rehabilitation Training</h3>
+                                </div>
+                                <p>Number of Participants: 10</p>
+                                <p>
+                                    Many turtle conservation organizations
+                                    operate captive breeding programs and
+                                    rehabilitation centers for injured or sick
+                                    turtles.
+                                </p>
+                                <a href="#" class="btn-section-content">learn more ></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="column-event-2">
+
+                <h1>Let's get started</h1>
+                <p>Please provide the following information to proceed</p>
+                <form action="" method="post" autocomplete="off">
+                    <div>
+                        <div class="join-event-box-title">Basic Information</div>
+                        <input type="text" name="Email" class="join-event-input-box" placeholder="Full Name" required>
+                        <input type="text" name="Address" class="join-event-input-box" placeholder="Residential address" required>
+                    </div>
+                    <div>
+                        <div class="join-event-box-title">Tell us more about you</div>
+                        <p>
+                            Tell us more about yourself. This
+                            will help us confirm this program is right for you.
+                        </p>
+                        <textarea rows="3" name="volCondition" class="join-event-message-box" placeholder="Any physical limitations or health concerns that may affect your participation (e.g., mobility issues, allergies, medical conditions)"></textarea>
+                        <textarea rows="3" name="Motivation" class="join-event-message-box" placeholder="What has motivated you to join this event?"></textarea>
+                        <textarea rows="3" name="Expectation" class="join-event-message-box" placeholder="Your expectations and interests regarding this event/activity"></textarea>
+                    </div>
+                    <div>
+                        <div class="join-event-box-title">Emergency Contact Information</div>
+                        <p>In case of any unforeseen emergencies or accidents during the event or activity, having emergency contact information readily available allows the organizers to quickly reach out to your designated emergency contact person. </p>
+                        <input type="text" name="EmergencyName" class="join-event-input-box" placeholder="Full name" required>
+                        <input type="text" name="EmergencyAddress" class="join-event-input-box" placeholder="Home Address" required>
+                        <input type="number" name="EmergencyMobile" class="join-event-input-box" placeholder="Mobile number" required>
+                        <input type="text" name="EmergencyRelation" class="join-event-input-box" placeholder="Relationship" required>
+                    </div>
+                    <div>
+                        <div class="join-event-box-title">Data Privacy Statement</div>
+                        <p>
+                            We are committed to protecting the privacy and security of your personal information. This Data Privacy Statement outlines how we collect, use, store, and protect the information you provide to us. By participating in our events and activities, you consent to the practices described in this statement.
+                            <br><br>
+                            <b>Information Collection:</b>
+                            We may collect personal information from you when you join our events and activities. This information may include your full name, contact details (such as email address and phone number), residential address, emergency contact information, and any other information relevant to your participation.
+                            <br><br>
+                            <b>Use of Information:</b>
+                            We will use the information you provide to facilitate your participation in our events and activities, communicate with you regarding event logistics and updates, ensure your safety during the activities, and comply with legal obligations. We may also use your contact information to send you newsletters, updates, or promotional materials related to our turtle conservation efforts, unless you opt out of such communications.
+                            <br><br>
+                            <b>Data Security:</b>
+                            We take appropriate measures to protect your personal information from unauthorized access, loss, misuse, alteration, or disclosure. We restrict access to your personal information to authorized personnel only, and we maintain physical, electronic, and procedural safeguards to protect your information.
+                            <br><br>
+                            <b>Data Retention:</b>
+                            We will retain your personal information for as long as necessary to fulfill the purposes for which it was collected, comply with legal obligations, resolve disputes, and enforce our agreements. Afterward, we will securely dispose of or anonymize your personal information.
+                            <br><br>
+                            <b>Third-Party Disclosure:</b>
+                            We do not sell, trade, or transfer your personal information to outside parties unless required by law or for event-related purposes (e.g., providing necessary information to transportation providers or local authorities for logistical purposes). We may share your information with trusted service providers who assist us in operating our events and activities, as long as they agree to keep your information confidential.
+                            <br><br>
+                            <b>Your Rights:</b>
+                            You have the right to access, correct, update, or delete your personal information held by us. You may also withdraw your consent for us to use your information for promotional purposes. To exercise these rights or for any inquiries or concerns regarding your personal information, please contact us using the information provided below.
+                            <br><br>
+                            <b>Changes to this Statement:</b>
+                            We may update or modify this Data Privacy Statement from time to time. We will notify you of any material changes through appropriate means. Your continued participation in our events and activities after such modifications will signify your acceptance of the updated statement.
+                            <br><br>
+                            For any questions, concerns, or requests related to your personal information, please contact us at:
+                            <br><br>
+                            Coastal Underwater Rosource Management Action
+                            <br>374 St. Jude Subdivision, Ili Norte,, 2514 San Juan, La Union
+                            <br>curma@sifcare.org
+                            <br>(+63)942 366 4519
+                            <br><br>
+                            By participating in our events and activities, you acknowledge that you have read and understood this Data Privacy Statement and consent to the collection, use, and storage of your personal information as described herein.
+                        </p>
+                    </div>
+                    <input type="submit" name="submit" value="CONFIRM" id="btn-join-event">
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+

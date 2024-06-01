@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SEE_TURTLES_WEB_APP_FINAL.Models.TrainingProperty>
+
+@{
+    ViewBag.Title = "Training";
+    Layout = "~/Views/Shared/_programs.cshtml";
+}
+
+<h2>Training</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainingId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainingTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainingDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainingLocation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TrainingDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainingId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainingTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainingDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainingLocation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TrainingDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

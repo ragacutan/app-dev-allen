@@ -1,0 +1,24 @@
+﻿@model SEE_TURTLES_WEB_APP_FINAL.Models.AdminProperty
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Account.cshtml";
+}
+
+<section class="login-body-container">
+    <div class="login-container">
+        <div class="side-login">
+            <img src="~/ImgAdmin/curmafb.png" alt="">
+        </div>
+        <form action="Verify" method="post" autocomplete="off" class="login-form">
+            <div class="login-form-logo">
+            </div>
+            <h2>ADMIN DASHBOARD</h2>
+            <h5>Enter Your Admin Account</h5>
+            @Html.ValidationSummary(false, "", new { @class = "text-danger" })
+            <input type="email" name="adminEmail" class="login-input-box" placeholder="Enter Email" required>
+            <input type="password" name="adminPassword" class="login-input-box" placeholder="Enter Password" required>
+            <input type="submit" name="submit" value="LOG IN" id="submit-login">
+        </form>
+    </div>
+</section>

@@ -1,0 +1,164 @@
+﻿@model IEnumerable<SEE_TURTLES_WEB_APP_FINAL.Models.EventProperty>
+
+@{
+    ViewBag.Title = "dashboard";
+    Layout = "~/Views/Shared/_adminDashboard.cshtml";
+}
+
+@if (Session["emailid"] != null)
+{
+    <body>
+        <div class="sidebar">
+            <div class="logo-details">
+                <div class="row-merch">
+
+                    <img src="~/ImgAdmin/curma-logo.png">
+
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a onclick="location.href='@Url.Action("dashboard", "Admin")'">
+                        <i class='bx bx-grid-alt'></i>
+                        <span class="links_name">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("volunteerList", "Admin")'">
+                        <i class='bx bx-box'></i>
+                        <span class="links_name">Volunteers</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("Nesting", "Admin")'">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Nesting</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("Hatchling", "Admin")'">
+                        <i class='bx bx-list-ul'></i>
+                        <span class="links_name">Hatchling</span>
+                    </a>
+                </li>
+                <li>
+                    <a onclick="location.href='@Url.Action("AddEvent", "Admin")'">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Activities</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Trainings</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Awareness</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">News</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class='bx bx-message'></i>
+                        <span class="links_name">Merchandise</span>
+                    </a>
+                </li>
+                <li class="log_out">
+                    <a onclick="myFunction()">
+                        <i class='bx bx-log-out'></i>
+                        <span class="links_name">Log out</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <section class="home-section">
+            <nav>
+                <div class="search-box">
+                    <input type="text" placeholder="Search here...">
+                    <i class='bx bx-search'></i>
+                </div>
+                <div class="profile-details">
+                    <img src="~/ImgAdmin/admin_profile.png" alt="">
+                    <span class="admin_name">@Html.ViewData["AdminName"]</span>
+                    <i class='bx bx-chevron-down'></i>
+                </div>
+            </nav>
+            <div class="home-content">
+                <div class="row-admin">
+                    <div class="column-admin-1">
+                        <h1>Events</h1>
+                        <p>Hi, <span style="text-decoration: underline;">@Html.ViewData["AdminName"]</span>! Welcome to CURMA Events!.</p>
+                    </div>
+                    <div class="column-admin-2">
+                        <div  onclick="location.href='@Url.Action("AddEvent", "Admin")'" class="box-title">
+                            <p>Add Event</p>
+                        </div>
+                    </div>
+                    <div class="column-admin-3">
+                        <div onclick="location.href='@Url.Action("joinedVol", "Admin")'" class="box-title">
+                            <p>Joined List</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="title-form">Event Information</div>
+                <div class="row-event-first">
+                    <div class="column-event-1">
+                        <div class="box-1">
+                            <form action="" method="post" autocomplete="off">
+
+                                <input type="text" name="EventTitle" class="event-input-box" placeholder="Event Title">
+
+                                <div>
+                                    <input type="number" name="EventPax" class="event-input-box-name" placeholder="Pax">
+                                    <input type="date" name="EventDate" class="event-input-box-name" placeholder="Date">
+                                </div>
+                                <input type="text" name="EventLocation" class="event-input-box" placeholder="Location">
+                                <textarea rows="4" type="text" name="EventDescription" class="contact-message-box" placeholder="Event Description..."></textarea>
+                                <input type="submit" name="submit" value="ADD EVENT" id="submit-registration">
+                            </form>
+                        </div>
+                    </div>
+
+                    
+                        <div class="column-event-2">
+                            <div class="box-1">
+                                <div class="title-form-2">Number of Upcoming Events: @Html.ViewData["Count"]</div>
+                                <div class="list-event">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="list-event-row">
+                                            <div class="list-event-column-1">
+                                                <h5>@Html.DisplayFor(modelItem => item.EventTitle) || Date: @Html.DisplayFor(modelItem => item.EventDate)</h5>
+                                            </div>
+                                            <div class="list-event-column-2">
+                                                <h4>UPDATE</h4>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+        </section>
+        <script>
+        function myFunction() {
+        if (confirm("Are You Sure You Want to Logout?")) {
+        var url = "@Url.Action("LoginPage", "Admin")";
+        window.location.href = url;
+            }
+        }
+        window.history.forward();
+        function noBack() { window.history.forward(); }
+        </script>
+    </body>
+}
